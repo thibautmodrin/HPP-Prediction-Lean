@@ -1,0 +1,6 @@
+services:
+  hpp-lean:
+    build: .
+    ports:
+      - "8501:80"
+    restart: unless-stopped
