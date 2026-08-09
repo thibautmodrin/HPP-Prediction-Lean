@@ -1,9 +1,10 @@
 # HPP Prediction Lean — Projet final Bloc 6 (Jedha)
 
-Version **cadrée et suffisante** pour la certification CDSD : même data clinique Bourgogne, sans overengineering.
+Version **cadrée et suffisante** pour la certification CDSD : data clinique Bourgogne, sans overengineering.
 
-> Variante allégée du [Projet 9 — HPP Prediction](../Projet%209%20-%20Final%20Project%20-%20HPP%20Prediction).  
-> Objectif : POC déployable + arbitrage métier assumé, pas un zoo de modèles.
+> Problème clinique → LogReg + seuil métier → Streamlit / Docker → limites assumées.  
+> Variante allégée de la [version complète archivée](https://github.com/thibautmodrin/Jedha_Full_Stack_HPP_Prediction) (XGBoost, MLflow, etc.).  
+> Objectif : POC déployable + arbitrage métier, pas un zoo de modèles.
 
 ## Problème métier
 
@@ -31,7 +32,7 @@ Leçon Jedha (Conversion / module 05) : un modèle simple bien seuillé > un boo
 ## Structure
 
 ```text
-Projet 9b - HPP Prediction Lean/
+HPP_Prediction_Lean/
 ├── README.md
 ├── DATA_LOCATION.md
 ├── requirements.txt
@@ -54,7 +55,8 @@ Projet 9b - HPP Prediction Lean/
 ## Quickstart
 
 ```bash
-cd "Projet 9b - HPP Prediction Lean"
+git clone https://github.com/thibautmodrin/HPP_Prediction_Lean.git
+cd HPP_Prediction_Lean
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
@@ -68,10 +70,12 @@ python -m src.train
 streamlit run app/app.py
 ```
 
-### Docker
+### Docker (démo sans réentraîner)
+
+Les artefacts de démo sont déjà dans `app/artifacts/`.
 
 ```bash
-cd app
+cd HPP_Prediction_Lean/app
 docker compose up --build
 ```
 
