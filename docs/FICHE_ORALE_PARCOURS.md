@@ -1,31 +1,28 @@
 # Fiche orale 1 page — hors HPP (filet jury)
 
-**Règle.** Les 10 min = **HPP**. Cette fiche = si on sort du projet.
+**Règle.** Les 10 min = **HPP Lean**. Cette fiche = si on sort du projet.
 
-**Titre CDSD.** 6 blocs. HPP = **Bloc 6**. Les repos GitHub **ne valident pas** à eux seuls les blocs 1–5.
+**Où sont les cas.** [CDSD_Certification_Projets](https://github.com/thibautmodrin/CDSD_Certification_Projets) → branche **`cursor/cdsd-certification-portfolio`** (pas de branche `certification`). `main` est incomplet : merge la PR avant le jury.
 
-| Bloc | Preuve | Statut oral |
-|------|--------|-------------|
-| 1 Kayak | GPS + météo + CCM + carte. Top : **Collioure 0,935**. Booking/S3/RDS **pas aboutis** | Partiel |
-| 2 Speed Dating | Notebook Tinder Plotly | OK si 3 insights |
-| 3 Conversion | Colab + leçon leakage `total_pages_visited` | OK |
-| 4 AT&T | `at$t_perso` NLP/DL | OK |
-| 5 Getaround | Stub Drive ; **repo privé** `CDSD_Certification_Projets` / `certification` non audité | Ne pas nier — relais live CathQ/HPP |
-| 6 HPP | Ce repo | OK si fiche HPP tenue |
+| Bloc | Projet | 1 chiffre / 1 phrase |
+|------|--------|----------------------|
+| 1 | Kayak | Nominatim → météo → S3 → Scrapy → RDS → carte. CCM **Le Havre ~0,93** (un run). |
+| 2 | Steam + Tinder | Spark Databricks ; Tinder = dit vs fait, unité = un date. |
+| 3 | Conversion / Walmart / Uber | F1 **0,777** LogReg ; Ridge R² test ~0,95 ; KMeans **k=6** + DBSCAN. |
+| 4 | AT&T | Sequential **F1 0,92** ; BERT **0,18**. |
+| 5 | Getaround | Ridge → FastAPI `/predict` + Streamlit threshold. **Pas de Docker.** |
+| 6 | HPP Lean | Recall test **57 %**, 0,82 %. **Pas** les 69 % / ~2 % de l’archive CDSD. |
 
 **Phrases 15 s**
 
-- *Kayak.* « Reco villes via météo, pas un modèle ; warehouse SQL non fini. »
-- *Dating.* « Écart entre ce qu’on dit vouloir (attractivité) et ce qui prédit le yes. Unité = un date, pas une personne. »
-- *Conversion.* « `total_pages_visited` fuit : connu trop tard pour cibler. »
-- *AT&T.* « Recall spam ; vocabulaire fit sur le train seulement. »
-- *Getaround.* « Dans le dépôt de certification (branche `certification`). Live : Docker HPP + FastAPI CathQ. »
-- *CathQ.* « Rebut extrusion, **data synthétique**, τ=0,05 coût FN×50, recall 30 % / prec 5 %, HOLD humain, pas un DM. Seuil 0,5 → recall 0 : d’où le seuil métier. »
-- *ERP.* « FastAPI dans Laravel. Stock/demande 30 j, safety **z=1,65 √LT**, MA14+pente. **Pas de sklearn.** »
-- *Vitizen.* « RAG Mistral+Chroma, **399 mots**, sources, pas d’éval RAGAS, AWS non livré. »
+- *Kayak.* « Pipeline cloud bout-en-bout ; ranking météo du jour ; scrape Booking fragile. »
+- *Steam.* « JSON S3, PySpark Databricks ; peu d’outputs dans le .ipynb local. »
+- *Conversion.* « F1 0,777 LogReg > boosting. `total_pages_visited` fuit pour une action *ex ante*. »
+- *Uber.* « Zones NYC : KMeans k=6 vs densité DBSCAN. »
+- *AT&T.* « Modèle léger bat BERT sur ce corpus — même leçon que Conversion / HPP. »
+- *Getaround.* « API prix + dash délai. Industrialisation Jedha. »
+- *CathQ / ERP / Vitizen.* Uniquement si on sort du cursus Fullstack (Lead / portfolio).
 
-**Ne jamais dire.** CathQ = cas officiel Bloc 5. ERP = « mon modèle de deep learning ». Vitizen = « prod viticole ». Kayak Booking « scrapé les 35 villes » (spider Paris embryonnaire).
+**Ne jamais.** Mélanger 57 % Lean et 69 % archive. Dire « Getaround n’existe pas ». Inventer un Docker Getaround. Citer Collioure *et* Le Havre comme tops simultanés sans dire « deux runs météo ».
 
-**Sécurité.** `.env` Kayak sur Drive : **révoquer les clés**. Ne pas les lire / committer.
-
-**Lead vs Fullstack.** CathQ = livrable **Lead** Overview. HPP = **Fullstack Bloc 6**.
+**Sécurité.** `.env` Drive Kayak : révoquer. Le dépôt public a `.env.example` seulement.

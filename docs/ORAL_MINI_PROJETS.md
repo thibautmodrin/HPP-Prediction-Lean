@@ -1,214 +1,136 @@
-# Oral parcours — mini-projets Jedha + portfolio
+# Oral parcours — dépôt CDSD (branche portfolio)
 
-Ce document prépare les **questions hors HPP**. L’oral Bloc 6 (10 min) reste [`ORAL_BLOC6.md`](ORAL_BLOC6.md). Ici : verdict de complétude, cartographie des 6 blocs CDSD, pitchs 30 s, Q/R, pièges.
+Source relue : [CDSD_Certification_Projets](https://github.com/thibautmodrin/CDSD_Certification_Projets).
 
-Sources auditées (août 2026) : GitHub **public** `thibautmodrin/*` et Drive Jedha.
+**Il n’y a pas de branche nommée `certification`.** Le livrable complet est `cursor/cdsd-certification-portfolio` (PR #1). `main` est plus maigre (pas d’API Getaround, pas des decks, pas du projet HPP). Pour l’oral, montre **cette branche** (ou merge-la dans `main` avant le jury).
 
-**Dépôt à ouvrir en priorité :** [CDSD_Certification_Projets](https://github.com/thibautmodrin/CDSD_Certification_Projets), branche **`certification`**. Il est **privé** : cet audit ne l’a pas lu (404 pour le token limité à HPP-Prediction-Lean). C’est très probablement le **bundle des cas Jedha 1–5**. Tant qu’il n’est pas relu, ne dis **pas** à l’oral « Getaround / Kayak n’existent pas » — dis « ils sont dans mon dépôt de certification, branche `certification` ».
-
-Les clés API Kayak présentes dans un `.env` Drive ne sont **pas** reproduites ici : à **révoquer / régénérer**, jamais à committer.
+Les 10 min DemoDay restent [`ORAL_BLOC6.md`](ORAL_BLOC6.md) (**HPP Lean**). Ici : les 8 mini-projets du dépôt CDSD + filet Q/R.
 
 ---
 
-## 1. Verdict en 20 secondes
+## 1. Verdict (après lecture du repo)
 
 | Question | Réponse |
 |----------|---------|
-| Le **DemoDay / oral Bloc 6** se joue-t-il sur les mini-projets ? | **Non.** Tu présentes **HPP Lean**. Les autres projets sont des **filets** si le jury sort du sujet. |
-| Les repos GitHub suffisent-ils à **valider le titre CDSD** (6 blocs) ? | **Non.** Le titre se capitalise par les **études de cas Jedha** (blocs 1–5) + le **projet libre** (bloc 6). Le portfolio n’est pas le jury. |
-| Peux-tu **défendre** un parcours fullstack à l’oral ? | **Oui sur 2, 3, 4, 6** (Drive / GitHub public). Kayak Drive = **partiel**. Getaround **absent du Drive et du GitHub public**, mais peut être dans le repo **privé** `CDSD_Certification_Projets` (branche `certification`) — **non audité ici**. |
+| Les cas Jedha 1–5 sont-ils **assez complets** pour un oral de parcours ? | **Oui**, si tu t’appropries les chiffres ci-dessous et que tu ne mélanges pas les deux HPP. |
+| Suffisent-ils à **valider le titre** à eux seuls ? | Ils **documentent** les 6 blocs. La validation reste Jedha / jury. Mais on ne peut plus dire « Getaround n’existe pas ». |
+| Les 10 min DemoDay ? | Toujours **HPP Lean**. Ne pas enchaîner Kayak → AT&T. |
 
-Phrase à dire si on te demande « tu as tout validé ? » :
+Phrase si on demande le parcours :
 
-> « Le projet de soutenance est HPP (Bloc 6). Les cas Jedha des blocs 1 à 5 sont dans le dépôt `CDSD_Certification_Projets`, branche `certification`. En public / Drive : Speed Dating, Conversion, AT&T sont travaillés ; Kayak GPS+météo+carte est là, Booking/RDS moins aboutis. L’industrialisation que je peux **montrer** en live, c’est Streamlit/Docker sur HPP et FastAPI/CI sur CathQ. »
-
----
-
-## 2. Deux certifications à ne pas mélanger
-
-| Cursus | Titre | Ton artefact « final » |
-|--------|--------|-------------------------|
-| **Fullstack Data** | CDSD, RNCP **35288**, 6 blocs | **HPP Lean** (ce repo) |
-| **Lead** | Architecte IA (autre RNCP) | **CathQ** se présente lui-même comme *Lead Bloc 4 / Project Overview* |
-
-CathQ **n’est pas** le cas officiel Fullstack (Getaround). C’est un **plus** MLOps / employabilité, et un argument si le jury veut de l’industrialisation. Ne dis pas « CathQ = Bloc 5 CDSD » : dis « compétence équivalente d’industrialisation, sur un projet Lead / portfolio ».
-
-La fiche CDSD 35288 est **inactive depuis le 10/02/2026** ; les inscrits avant cette date peuvent encore la passer. Les 6 blocs restent requis pour le titre ; un bloc seul donne un certificat de compétences (5 ans).
+> « Les cas des blocs 1 à 5 sont dans `CDSD_Certification_Projets` (branche portfolio) : Kayak S3/RDS, Steam Spark, Conversion F1 0,777, Uber clustering, AT&T NLP, Getaround FastAPI + Streamlit. Le projet de soutenance est HPP Lean : triage à l’admission, LogReg, recall 57 % sur le test. »
 
 ---
 
-## 3. Cartographie CDSD ↔ preuves
+## 2. Cartographie (la tienne, dans le README du dépôt)
 
-Études de cas Jedha Fullstack usuelles : **Kayak → Speed Dating → Conversion → AT&T → Getaround → projet libre**.
+| Bloc RNCP | Projet du dépôt | Statut | À mémoriser |
+|-----------|-----------------|--------|-------------|
+| **1** Infra | **Kayak** | Complet pour l’oral (notebooks 1→7 + spider) | Pipeline Nominatim → OpenWeather → S3 → Scrapy → RDS → Plotly. Top CCM **Le Havre ~0,93** (un run météo, pas une vérité éternelle). |
+| **2** EDA | **Steam** (deck) + **Tinder** (notebook) | Steam = Spark Databricks (outputs locaux faibles). Tinder = EDA Plotly aboutie | Steam : JSON S3 + PySpark. Tinder : dit vs fait sur l’attractivité. |
+| **3** Structuré | **Conversion** + **Walmart** + **Uber** | Conversion et Uber solides. Walmart notebook réel | Conversion **F1 0,777** LogReg, seuil 0,96. Walmart Ridge **R² test ~0,95** (CV ~0,89). Uber **KMeans k=6** + DBSCAN. |
+| **4** Non structuré | **AT&T** | Complet | Sequential **F1 0,92** / acc. 97,9 %. BERT val **F1 0,18** — le simple gagne. |
+| **5** Industrialiser | **Getaround** | Complet pour l’oral (API + dash + data) | Ridge → `reg.pkl` → FastAPI `/predict` + Streamlit threshold. Pas de Docker. |
+| **6** Projet | **HPP** (ce Lean **ou** l’archive XGB/MLflow du dépôt CDSD) | Lean = oral DemoDay | **Ne pas mélanger les chiffres** (voir §4). |
 
-| Bloc CDSD | Cas Jedha attendu | Ta preuve | Complet pour l’oral ? |
-|-----------|-------------------|-----------|------------------------|
-| **1** Infra / collecte / lake | **Kayak** (API, scrape, S3, RDS, cartes) | Drive : Nominatim, OpenWeather, ranking CCM, Plotly, spider Booking **embryonnaire**, notebook S3 **léger**, **pas de RDS** | **Partiel** |
-| **2** EDA | **Speed Dating** | `Project_Tinder.ipynb` (~2,4 Mo, Plotly, questions métier) | **Oui** si tu sors 3 insights |
-| **3** ML structuré | **Conversion** | Colab `test.ipynb` (pipeline sklearn, `converted`) + **HPP** | **Oui** (HPP est même plus fort) |
-| **4** Non structuré / DL | **AT&T spam** | `at$t_perso.ipynb` (~574 ko) + bonus **Vitizen RAG** | **Oui** pour AT&T ; RAG = bonus mince |
-| **5** Industrialiser / API | **Getaround** (dash + API prix, Docker) | Drive = stub cours ; **à confirmer** dans `CDSD_Certification_Projets` / `certification`. Relais public : HPP Docker + CathQ FastAPI | **Inconnu tant que le repo privé n’est pas lu** |
-| **6** Conduite de projet | Projet libre | **HPP Lean** | **Oui** si tu tiens [`ORAL_BLOC6.md`](ORAL_BLOC6.md) |
-
-Portfolio GitHub (hors cas Jedha) : [HPP-Prediction-Lean](https://github.com/thibautmodrin/HPP-Prediction-Lean), [CathQ](https://github.com/thibautmodrin/CathQ), [ERP-Stock-Prediction](https://github.com/thibautmodrin/ERP-Stock-Prediction), [Vitizen-RAG](https://github.com/thibautmodrin/Vitizen-RAG).
+Portfolio hors Jedha (CathQ, ERP, Vitizen) : filet emploi, pas les cas officiels. CathQ ≠ Bloc 5.
 
 ---
 
-## 4. Comment utiliser ça le jour J
+## 3. Comment jouer l’oral
 
-1. **10 min** = uniquement HPP (problème, anti-leakage, métriques, 57 % ≠ 65 %, 1 HPP / 70 alertes, Docker, limites).
-2. **Q/R** : si « et les autres blocs ? » → tableau ci-dessus, 4 phrases, **pas** de démo Kayak.
-3. **Ne pas** enchaîner CathQ / ERP / Vitizen sauf question explicite.
-4. **Ne jamais** sur-vendre : données CathQ synthétiques, ERP sans sklearn, Vitizen 399 mots, Kayak Booking Drive cassé. Ne **nie** pas Getaround tant que le repo privé n’est pas relu.
-
----
-
-## 5. Cas Jedha (Drive) — pitchs et honnêteté
-
-### 5.1 Kayak (Bloc 1) — partiel
-
-**Pitch 30 s.** Reco de destinations FR : GPS Nominatim, météo OpenWeather, score **CCM**, carte Plotly. Top ville le jour du run : **Collioure (CCM 0,935)**, puis Aigues-Mortes / Saintes-Maries. Objectif Jedha ensuite : data lake S3 + warehouse RDS + hôtels Booking.
-
-**Ce qui est là.** Notebooks `1_Api_GPS`, `2_Api_meteo`, `4_Map`, CSV `cities_lat_long_ccm.csv` / `City_Meteo_Rank.csv`. Notebook S3 présent mais très court.
-
-**Ce qui manque.** Spider Booking : une URL Paris + XPath qui logge, pas un extract 35 villes. Warehouse SQL / RDS : pas trouvé. Scraping Booking.com est **fragile** (DOM change, ToS) : le dire.
-
-**Q/R.**
-- *Lake vs warehouse ?* Lake = brut (CSV S3) ; warehouse = tables SQL nettoyées, requêtables.
-- *Pourquoi pas tout scraper ?* APIs d’abord (contrat stable) ; scrape en dernier recours.
-- *Score CCM ?* Agrégat météo maison (chaud / sec) pour classer 35 villes — pas un modèle ML.
-
-**Piège.** Un `.env` Drive contient des clés météo. **Les régénérer.** Ne jamais les coller dans GitHub ni les lire à l’oral.
-
-### 5.2 Speed Dating / Tinder (Bloc 2) — suffisant
-
-**Pitch 30 s.** EDA Columbia speed dating : ce que les gens **déclarent** vouloir vs ce qui **prévoit** un `match` / un `dec`. Visualisations Plotly. Trois questions Jedha classiques.
-
-**3 insights à retenir** (d’après tes notebooks `Descriptive_Statistics_Tinder` / `Project_Tinder`) :
-1. Attributs **déclarés** (`attr1_1` …) : les hommes sur-pondèrent souvent l’attractivité ; les femmes répartissent davantage.
-2. **Écart dit / fait** : `attr1_1` (avant) vs `attr7_2` (après) et vs notes réelles `attr` selon `dec` — l’attractivité pèse plus dans la décision que dans le discours.
-3. Intérêts partagés (`int_corr`) vs même race (`samerace` / `imprace`) : corrélation d’intérêts liée au match ; la race n’est pas le levier unique.
-
-**Q/R.** *Cible ?* `match` = double yes. Unité = un **rendez-vous** (iid × partner), pas une personne — sinon on double-compte. *Biais ?* Waves, étudiants Columbia, auto-déclaration, NA.
-
-### 5.3 Conversion (Bloc 3) — suffisant si tu tiens le leakage
-
-**Pitch 30 s.** Prédire `converted` (newsletter) : `country`, `age`, `new_user`, `source`, et **éventuellement** `total_pages_visited`. Déséquilibre. Pipeline sklearn (impute + scale + OHE + LogReg / arbres). Leçon du module 05 : **modèle simple + bon cadrage > boosting mal cadré** — c’est exactement le fil HPP Lean.
-
-**Piège n°1 du jury.** `total_pages_visited` est souvent du **leakage** : on le connaît **après** la session. Un modèle « magique » avec cette variable ne sert pas à **cibler** un visiteur à l’arrivée. Réponse : *« En prod je l’enlève ou je ne l’utilise qu’en analyse descriptive. Pour une action marketing ex ante, country / age / new_user / source. »*
-
-**Q/R.** Accuracy trompeuse (peu de conversions). Baseline Dummy / toujours 0. Split user-level si plusieurs lignes.
-
-### 5.4 AT&T spam (Bloc 4) — notebook perso présent
-
-**Pitch 30 s.** Classif texte ham/spam (SMS). Preprocessing NLP → embedding / réseau (Keras) plutôt que règles métier. Métrique : **recall spam** (laisser passer un spam est coûteux) + ne pas tout classer spam.
-
-**Preuve.** `at$t_perso.ipynb` travaillé ; le `01-AT&T_spam_detector.ipynb` du cours est un stub.
-
-**Q/R.** Train/test **avant** vectorizer (fit vocabulaire sur le train seulement). Déséquilibre ham/spam. *Transformers ?* Possible ; pour un SMS court un modèle simple suffit au cas Jedha.
-
-**Bonus.** Vitizen RAG (ci-dessous) montre du **non-structuré génératif**, ce n’est pas le livrable AT&T.
-
-### 5.5 Getaround (Bloc 5) — **à confirmer dans le repo privé**
-
-**Constat public.** Drive : uniquement le stub cours `01-Getaround_analysis (1).ipynb` (~9 ko). Pas d’API / Docker Getaround dans les repos **publics**.
-
-**Hypothèse.** Le livrable réel est dans [CDSD_Certification_Projets](https://github.com/thibautmodrin/CDSD_Certification_Projets) / branche `certification` (privé, non lu ici).
-
-**Ce que Jedha attend en général.** Analyse du delay entre locations **et** API documentée de prédiction de prix, packagée (Docker / cloud).
-
-**Quoi dire tant que ce n’est pas relu.** *« Getaround est dans mon dépôt de certification. En live je peux montrer l’industrialisation HPP (Streamlit + Compose) et CathQ (FastAPI, CI). »* Ne pas inventer un déploiement Render/Heroku. Ne pas dire « je n’ai pas fait Getaround » si le zip/repo le contient.
-
-Si Jedha a **déjà validé** le bloc 5 sur Julie, l’oral Bloc 6 n’en dépend pas. Sinon, ouvre le repo `certification` **avant** le jury.
+1. **DemoDay 10 min** = HPP Lean uniquement.  
+2. Tes decks `Presentation_Bloc*.pptx` (~5 min / bloc) servent si le jury **déroule les 6 blocs**. Ne les enchaîne pas dans les 10 min HPP.  
+3. Branche à ouvrir : `cursor/cdsd-certification-portfolio`.  
+4. **Deux HPP** : Lean (recall test 57 %, 0,82 %, pas de SMOTE) vs archive CDSD/HF (SMOTE, ~2 %, recall 69 % LogReg). Tu défends **Lean**. Les slides `Presentation_Bloc6_HPP.pptx` du dépôt CDSD parlent encore de l’archive.
 
 ---
 
-## 6. Portfolio GitHub — pitchs (si on sort de HPP)
+## 4. Piège n°1 : deux versions HPP
 
-### 6.1 HPP Lean — Bloc 6 (projet du jour)
+| | **Lean** (oral recommandé) | **Archive** (Projet 9 du dépôt CDSD) |
+|--|----------------------------|--------------------------------------|
+| Prévalence | **0,82 %** (535 / 65 535) | ~2 % dans le README Projet 9 |
+| Modèle | LogReg `class_weight`, pas de SMOTE | LogReg+SMOTE, RF, XGB |
+| Recall test | **57 %** (objectif 65 % non tenu) | 69 % / 65 % / 66 % |
+| Démo | Streamlit Lean + Compose | HF Space + MLflow + joblib **Git LFS** (pointeur 0,1 ko sans `git lfs`) |
 
-Voir [`FICHE_ORALE.md`](FICHE_ORALE.md). Une ligne : *curseur de charge, pas un DM ; Dummy battu ; 57 % ≠ 65 % ; 1 vraie HPP / 70 alertes.*
-
-### 6.2 CathQ — MLOps junior (Lead / portfolio)
-
-**Pitch 30 s.** Rebut (`is_scrap`) sur extrusion de cathéters. **Données 100 % synthétiques.** Décision `PASS` / `HOLD_REVIEW` (humain). XGBoost vs RF, seuil **coût** FN×50 / FP×1 → τ = **0,05**. Test : recall **30 %**, précision **5,2 %** (TP 24, FP 435, FN 55). FastAPI + Docker + MLflow + PSI + CI (9 tests pytest). **Pas un dispositif médical.**
-
-**Chiffres à ne pas confondre.** Dans `train_metrics.json`, precision/recall à **0** : c’est le seuil sklearn **0,5** par défaut, inutilisable. Les vrais chiffres métier sont ceux d’**eval coût** (τ = 0,05).
-
-**Q/R.**
-- *Pourquoi synthétique ?* MES usine propriétaire ; le projet démontre la **chaîne** MLOps, pas une usine réelle.
-- *Drift ?* PSI sur melt / vacuum / OD / moisture (seuil 0,2). `mean_shift_z` et `alert_on_scrap_spike` sont dans le YAML, **pas implémentés** dans `drift.py` — le dire si on creuse.
-- *Airflow ?* Prévu au design ; le cœur démo = `make demo` + API. Ne pas raconter un cluster Airflow en prod.
-
-### 6.3 ERP Stock Prediction — intégration, pas du ML sklearn
-
-**Pitch 30 s.** Module Python FastAPI branché sur un ERP **Laravel + Postgres**. Rupture = stock / demande moyenne 30 j. Safety stock = **1,65 × σ × √7** (lead time 7 j, ~95 %). Forecast = **moyenne mobile 14 j + pente `polyfit`**. Démo Docker, ~45 jours, UI en **espagnol** (contexte mission).
-
-**Piège.** Le README dit « ML léger » : **il n’y a pas de sklearn / XGBoost**. C’est de la **stat d’inventaire**. Assume-le : *intégration ERP + règles métier*, pas un modèle entraîné. Pas de MAPE reportée.
-
-**Q/R.** *Pourquoi 1,65 ?* z d’une normale pour ~95 % de couverture. *Limite ?* Saisonnalité, ruptures, 45 jours de seed : trop court pour un vrai forecast.
-
-### 6.4 Vitizen RAG — démo RAG, corpus jouet
-
-**Pitch 30 s.** Assistant pulvérisation viticole : 4 `.txt` (**~399 mots**), embeddings + LLM **Mistral**, index **Chroma**, FastAPI `/query` + sources. Docker réindexe au start. Pas un conseil réglementaire.
-
-**Q/R.** *Éval ?* Pas de RAGAS. *Hallucinations ?* Prompt « je ne sais pas » + sources ; corpus trop petit pour une prod. *AWS ?* Mentionné, **non livré**. Hors scope : app Vitizen, re-rank, mémoire.
+Si tu cites 69 % et 57 % dans la même phrase, le jury croit que tu ne maîtrises pas. Une phrase : *« J’ai volontairement simplifié : plus de SMOTE, seuil métier, POC Docker. Les notebooks XGB/MLflow restent dans le dépôt CDSD. »*
 
 ---
 
-## 7. Questions « parcours » (réponses toutes faites)
+## 5. Pitchs 30 s + Q/R (cas du dépôt)
 
-**« Montre-moi que tu es fullstack, pas seulement un notebook HPP. »**  
-Collecte (Kayak APIs), EDA (Speed Dating), ML tabulaire (Conversion + HPP), NLP (AT&T), serving (HPP Docker + CathQ FastAPI), RAG (Vitizen). Getaround : dépôt de certification, pas le live public.
+### Kayak — Bloc 1
 
-**« Pourquoi tant de projets lean / synthétiques ? »**  
-Même doctrine Jedha : livrer un **cadrage + un POC reproductible** plutôt qu’un zoo. HPP réel PMSI ; CathQ synthétique assumé ; Vitizen corpus pédagogique.
+**Pitch.** 35 villes FR. GPS Nominatim, météo OpenWeather, score CCM, lake S3, scrape Booking (Scrapy, cartes `data-testid=property-card`), warehouse RDS MySQL, carte Plotly. Enjeu brief : 70 % veulent plus d’infos destination.
 
-**« Spark / Big Data ? »**  
-Pas dans le portfolio GitHub. Kayak = APIs + pandas, pas Spark. Si le bloc 1 Jedha l’exigeait via un lab Databricks, le citer **seulement si tu l’as fait** ; sinon : hors de ce que je peux montrer aujourd’hui.
+**Chiffres du README / deck.** CCM top **Le Havre ~0,93** (un autre run Drive donnait Collioure : **le ranking change avec la météo du jour**). Spider fragile si le DOM Booking bouge. `.env` (pas de secrets dans Git).
 
-**« Non-supervisé ? »**  
-Pas de projet portfolio dédié (pas de clustering clients / PCA Speed Dating abouti en repo). Ne pas inventer. HPP n’est pas du non-supervisé.
+**Q/R.** Lake = fichiers S3 ; warehouse = tables RDS. ACL `public-read` = limite, signed URLs en mieux. Pas d’Airflow : notebooks manuels.
 
-**« Tu vises aussi le Lead ? »**  
-CathQ est cadré Lead Bloc 4. Spotify / Stripe / Fraud = autres blocs Lead, pas dans ce GitHub.
+**Reste mince.** Notebook S3 tout petit (~3 ko). Pas de `hotels.csv` commité (reproductibilité scrape).
+
+### Steam — Bloc 2 (deck officiel)
+
+**Pitch.** EDA Big Data : JSON Steam sur S3, **PySpark / Databricks**, schéma imbriqué, 7 questions métier (éditeurs, ratings…). Passage du pandas local au cluster.
+
+**Limite à dire.** Le `.ipynb` local (~28 ko) a **peu d’outputs**. La preuve live = workspace Databricks (lien dans le notebook). Si le lien est mort le jour J : raconter le pipeline, pas feindre une démo.
+
+**Tinder** (même bloc EDA, notebook 3,5 Mo) : unité = un *date* ; écart déclaré vs réel sur l’attractivité ; `match` = double yes.
+
+### Conversion — Bloc 3
+
+**Pitch.** Newsletter `converted`. F1 (accuracy 99 % trompeuse). **LogReg F1 0,777** > GB 0,773 > XGB 0,769. Seuil **0,96**. Prec 0,85 / recall 0,72 sur la classe 1.
+
+**Piège.** Features incluent `total_pages_visited` (souvent **après** la session). Le dire : *utile en analyse, discutable pour cibler à l’arrivée*. C’est le fil HPP Lean (modèle simple bien seuillé).
+
+### Walmart — Bloc 3 (régression)
+
+Ridge + GridSearch. **R² CV ~0,89, R² test ~0,95** (Best Score ~0,936). Si le test > CV : petit jeu, split chanceux — ne pas vendre 0,95 comme « la » perf.
+
+### Uber — Bloc 3 (non supervisé)
+
+NYC, cartes Plotly. **KMeans k=6** (elbow) vs **DBSCAN** (densité, outliers). Pas de cible : on cherche des zones / heures de demande.
+
+### AT&T — Bloc 4
+
+SMS ham/spam. Embedding+Dense **acc. 97,9 %, F1 0,92**. BERT transfer **F1 val 0,18** : trop lourd / mal calé pour ce corpus. Vectorizer / tokenizer **fit sur le train**.
+
+### Getaround — Bloc 5
+
+**Pitch.** Deux livrables Jedha : (1) **API prix** Ridge + Pipeline sklearn, joblib, FastAPI `/predict` + `/health` + `/model/feature_order` ; (2) **dashboard** Streamlit : slider 0–120 min, part des locations coupées vs retards évités (Connect vs All). Data Jedha dans `dashboard/data/`. Notebooks d’analyse dans `others/`.
+
+**Q/R.** *Docker ?* Non sur Getaround (HPP/CathQ oui). *Test ?* Script smoke `tests/test_api_local.py` (API déjà up), pas une suite pytest. *Modèle ?* Ridge, MAE imprimée à l’entraînement — à relancer `python app/model/train.py` pour le chiffre exact plutôt que l’inventer.
+
+Démo orale : `uvicorn app.main:app` + `streamlit run dashboard/streamlit_app.py`.
 
 ---
 
-## 8. Ce qui suffit vs ce qui bloque la validation
+## 6. Suffisant pour valider ?
 
-### Suffisant pour **passer l’oral Bloc 6** (DemoDay)
+**Oral Bloc 6 / DemoDay :** oui avec HPP Lean, plus ce filet.
 
-- HPP tenu (chiffres, limites, démo Streamlit).
-- 4 phrases honnêtes sur le reste du parcours.
-- Pas besoin que Kayak/Getaround/Vitizen soient « parfaits ».
+**Parcours 6 blocs :** le dépôt portfolio **couvre** Kayak, EDA (Tinder+Steam), ML structuré (Conversion/Walmart/Uber), DL (AT&T), deploy (Getaround), projet (HPP). Trous honnêtes, pas rédhibitoires à l’oral :
 
-### **Ne bloque pas** l’oral, mais **peut bloquer le titre** si non déjà validé sur Julie
+- Steam peu reproductible hors Databricks  
+- Kayak scrape non figé dans Git  
+- Getaround sans Docker / CI  
+- Conversion : leakage pages vues  
+- HPP Projet 9 : joblib en **Git LFS** ; chiffres ≠ Lean  
+- `oral/node_modules` versionné (bruit, pas un sujet jury)
 
-- **Getaround** non visible en public (bloc 5) — **vérifier** `CDSD_Certification_Projets` / `certification`.
-- **Kayak** Drive sans S3/RDS/Booking abouti (bloc 1) — même vérif.
-
-Je n’ai pas accès à Julie / aux PV de jury : **demande à Jedha** si les blocs 1–5 sont déjà capitalisés. Si oui, l’oral = Bloc 6. Si non, les mini-projets GitHub **ne ferment pas** ces trous à eux seuls.
-
-### Suffisant pour un **portfolio emploi** (autre sujet)
-
-- HPP + CathQ = les deux piliers.
-- ERP = carte « j’intègre un SI ».
-- Vitizen = carte « j’ai touché au RAG », à présenter comme **jouet**.
+Merge la PR portfolio dans `main` avant d’envoyer le lien au jury.
 
 ---
 
-## 9. Mini-plan de révision (hors HPP)
+## 7. Révision 3 min (hors HPP Lean)
 
-La veille, **à voix haute**, chrono 3 min :
-
-1. Kayak : Collioure 0,935 ; lake vs warehouse ; Booking non fini.  
-2. Speed Dating : dit vs fait sur l’attractivité ; unité = date.  
-3. Conversion : `total_pages_visited` = leakage.  
-4. AT&T : recall spam ; vectorizer fit sur train.  
-5. Getaround : dépôt `certification` ; relais live CathQ/HPP.  
-6. CathQ : synthétique, τ 0,05, recall 30 %, pas un DM.  
-7. ERP : pas sklearn, z=1,65, LT=7.  
-8. Vitizen : 399 mots, sources, pas RAGAS.
-
-Le matin : relire [`FICHE_ORALE.md`](FICHE_ORALE.md) (HPP) + [`FICHE_ORALE_PARCOURS.md`](FICHE_ORALE_PARCOURS.md) (cette page condensée).
+1. Kayak : S3 + RDS ; CCM **du jour** ; Booking fragile.  
+2. Steam : Spark Databricks ; Tinder : dit vs fait.  
+3. Conversion : F1 **0,777** LogReg ; pages vues = leakage.  
+4. Walmart : Ridge, R² test élevé, petit dataset.  
+5. Uber : k=6 vs DBSCAN.  
+6. AT&T : F1 0,92 > BERT 0,18.  
+7. Getaround : Ridge API + threshold Streamlit.  
+8. HPP : **Lean 57 % / 0,82 %**, pas les 69 % de l’archive.
