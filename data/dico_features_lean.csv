@@ -1,0 +1,24 @@
+variable,type,intitule
+bmi,num,IMC (poids / taille²)
+terme,num,Terme à l'accouchement (semaines d'aménorrhée)
+dsm_g,num,Durée d'hospitalisation pendant la grossesse
+taille_mere,num,Taille de la mère (cm)
+age_m,num,Âge maternel (années)
+parite,num,Parité obstétricale (0 à 9)
+nbilan,num,Nombre de bilans au cours de la grossesse
+hosp_m_g,num,Hospitalisations pendant la grossesse
+nsej18,num,Nombre de séjours < 18 SA
+AMP,cat,"Aide médicale à la procréation (FIV, ICSI, TEC, insémination) ; NA → Aucune"
+g_type,cat,Type de grossesse (1=mono, 2=multiple)
+diabete,cat,Diabète (0=non, 1=préexistant, 2=gestationnel)
+preecl,cat,Pré-éclampsie (0/1)
+hta_tot,cat,HTA totale = chronique + gravidique (0/1)
+tabac,cat,Tabac (0/1)
+cortico,cat,Corticothérapie (0/1)
+ut_cica,cat,Utérus cicatriciel (0/1)
+creta,cat,Placenta accreta (0/1)
+hellp,cat,HELLP syndrome (0/1)
+cholestase,cat,Cholestase gravidique (0/1)
+pma,cat,Procréation médicalement assistée (0/1)
+bilan,cat,Bilan au cours de la grossesse (0/1)
+HPPsev,cible,"Union : transfusion (hpp_trans) ou embo / Tampo_int / hyst / liga"

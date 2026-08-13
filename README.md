@@ -41,7 +41,7 @@ HPP_Prediction_Lean/
 │   ├── prepare_data.py    # brut → admission_hpp.csv
 │   └── train.py           # baseline + LogReg + seuil + export
 ├── notebooks/
-│   └── 01_eda_court.ipynb
+│   └── 01_eda_court.ipynb   # taux, NA, FdR vs cible (pas l'EDA Colab archivée)
 ├── data/processed/        # généré (gitignore)
 ├── artifacts/             # model + feature_order + meta (généré)
 └── app/                   # POC Streamlit prêt Docker
@@ -101,7 +101,8 @@ Interprétation orale : on bat clairement la baseline ; la RF n’apporte pas de
 4. POC industrialisé (joblib + Streamlit + Docker).  
 5. Limites : précision faible, validation clinique prospective, monitoring du volume d’alertes.
 
-Préparation soutenance (script 10 min, chiffres, Q/R jury) : [`docs/ORAL_BLOC6.md`](docs/ORAL_BLOC6.md) · fiche 1 page : [`docs/FICHE_ORALE.md`](docs/FICHE_ORALE.md).
+Préparation soutenance (script 10 min, chiffres, Q/R jury) : [`docs/ORAL_BLOC6.md`](docs/ORAL_BLOC6.md) · fiche 1 page : [`docs/FICHE_ORALE.md`](docs/FICHE_ORALE.md).  
+EDA archivée vs Lean : [`docs/COMPARAISON_EDA.md`](docs/COMPARAISON_EDA.md).
 
 ## Confidentialité
 
