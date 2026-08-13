@@ -1,6 +1,8 @@
 data/raw/*
 !data/raw/.gitkeep
 data/processed/*.csv
+# Les .joblib de l'app (démo Docker) doivent être commités après train.
+# Seuls ceux de la racine /artifacts/ restent locaux.
 __pycache__/
 *.pyc
 .venv/

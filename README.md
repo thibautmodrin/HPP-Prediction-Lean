@@ -41,7 +41,7 @@ HPP_Prediction_Lean/
 │   ├── prepare_data.py    # brut → admission_hpp.csv
 │   └── train.py           # baseline + LogReg + seuil + export
 ├── notebooks/
-│   └── 01_eda_court.ipynb
+│   └── 01_eda_court.ipynb   # taux, NA, FdR vs cible (pas l'EDA Colab archivée)
 ├── data/processed/        # généré (gitignore)
 ├── artifacts/             # model + feature_order + meta (généré)
 └── app/                   # POC Streamlit prêt Docker
@@ -60,7 +60,7 @@ cd HPP_Prediction_Lean
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# 1) Préparer (nécessite le CSV brut — voir DATA_LOCATION.md)
+# 1) Préparer (CSV brut local — voir DATA_LOCATION.md, ne pas le committer)
 python -m src.prepare_data
 
 # 2) Entraîner + exporter artefacts + CSV démo
@@ -72,7 +72,7 @@ streamlit run app/app.py
 
 ### Docker (démo sans réentraîner)
 
-Les artefacts de démo sont déjà dans `app/artifacts/`.
+Prérequis : `app/artifacts/model_logreg.joblib` (généré par `python -m src.train`, voir [`DATA_LOCATION.md`](DATA_LOCATION.md)). Tant que ce fichier n’est pas dans Git, Compose affiche « artefacts introuvables ».
 
 ```bash
 cd HPP_Prediction_Lean/app
@@ -100,6 +100,10 @@ Interprétation orale : on bat clairement la baseline ; la RF n’apporte pas de
 3. Choix de stack volontairement lean (délai + interprétabilité LogReg).  
 4. POC industrialisé (joblib + Streamlit + Docker).  
 5. Limites : précision faible, validation clinique prospective, monitoring du volume d’alertes.
+
+Préparation soutenance (script 10 min, chiffres, Q/R jury) : [`docs/ORAL_BLOC6.md`](docs/ORAL_BLOC6.md) · fiche 1 page : [`docs/FICHE_ORALE.md`](docs/FICHE_ORALE.md).  
+Parcours / mini-projets (Kayak, Dating, Conversion, AT&T, Getaround, CathQ, ERP, Vitizen) : [`docs/ORAL_MINI_PROJETS.md`](docs/ORAL_MINI_PROJETS.md) · [`docs/FICHE_ORALE_PARCOURS.md`](docs/FICHE_ORALE_PARCOURS.md).  
+EDA archivée vs Lean : [`docs/COMPARAISON_EDA.md`](docs/COMPARAISON_EDA.md).
 
 ## Confidentialité
 
