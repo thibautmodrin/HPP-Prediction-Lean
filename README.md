@@ -60,7 +60,7 @@ cd HPP_Prediction_Lean
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# 1) Préparer (nécessite le CSV brut — voir DATA_LOCATION.md)
+# 1) Préparer (CSV brut local — voir DATA_LOCATION.md, ne pas le committer)
 python -m src.prepare_data
 
 # 2) Entraîner + exporter artefacts + CSV démo
