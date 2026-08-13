@@ -10,7 +10,7 @@
 | 2 Speed Dating | Notebook Tinder Plotly | OK si 3 insights |
 | 3 Conversion | Colab + leçon leakage `total_pages_visited` | OK |
 | 4 AT&T | `at$t_perso` NLP/DL | OK |
-| 5 Getaround | **Absent** du Drive | Trou — relais CathQ/HPP |
+| 5 Getaround | Stub Drive ; **repo privé** `CDSD_Certification_Projets` / `certification` non audité | Ne pas nier — relais live CathQ/HPP |
 | 6 HPP | Ce repo | OK si fiche HPP tenue |
 
 **Phrases 15 s**
@@ -19,7 +19,7 @@
 - *Dating.* « Écart entre ce qu’on dit vouloir (attractivité) et ce qui prédit le yes. Unité = un date, pas une personne. »
 - *Conversion.* « `total_pages_visited` fuit : connu trop tard pour cibler. »
 - *AT&T.* « Recall spam ; vocabulaire fit sur le train seulement. »
-- *Getaround.* « Pas livré. Industrialisation montrée : Docker HPP + FastAPI CathQ. »
+- *Getaround.* « Dans le dépôt de certification (branche `certification`). Live : Docker HPP + FastAPI CathQ. »
 - *CathQ.* « Rebut extrusion, **data synthétique**, τ=0,05 coût FN×50, recall 30 % / prec 5 %, HOLD humain, pas un DM. Seuil 0,5 → recall 0 : d’où le seuil métier. »
 - *ERP.* « FastAPI dans Laravel. Stock/demande 30 j, safety **z=1,65 √LT**, MA14+pente. **Pas de sklearn.** »
 - *Vitizen.* « RAG Mistral+Chroma, **399 mots**, sources, pas d’éval RAGAS, AWS non livré. »

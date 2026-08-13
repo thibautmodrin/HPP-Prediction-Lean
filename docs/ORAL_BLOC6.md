@@ -39,7 +39,7 @@ Ce projet **ne couvre pas** à lui seul :
 
 Si on te le reproche : *« Ces compétences ont été évaluées dans les cas pratiques des blocs 1 à 5. Ici je montre que je sais **cadrer, simplifier et livrer** un POC métier. »*
 
-Audit Drive + GitHub des autres projets (complets ou non, pitchs, pièges) : [`ORAL_MINI_PROJETS.md`](ORAL_MINI_PROJETS.md). Fiche 1 page hors HPP : [`FICHE_ORALE_PARCOURS.md`](FICHE_ORALE_PARCOURS.md). **Getaround est absent** ; Kayak est **partiel** — ne pas les inventer à l’oral.
+Audit Drive + GitHub public : [`ORAL_MINI_PROJETS.md`](ORAL_MINI_PROJETS.md). Fiche 1 page hors HPP : [`FICHE_ORALE_PARCOURS.md`](FICHE_ORALE_PARCOURS.md). Kayak Drive = **partiel**. Getaround **pas dans le public** — probablement dans le repo privé `CDSD_Certification_Projets` (branche `certification`), non lu ici. Ne pas nier ce que ce dépôt contient.
 
 ### Piège de la version « Lean »
 

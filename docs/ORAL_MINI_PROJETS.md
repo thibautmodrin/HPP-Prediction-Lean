@@ -2,7 +2,11 @@
 
 Ce document prépare les **questions hors HPP**. L’oral Bloc 6 (10 min) reste [`ORAL_BLOC6.md`](ORAL_BLOC6.md). Ici : verdict de complétude, cartographie des 6 blocs CDSD, pitchs 30 s, Q/R, pièges.
 
-Sources auditées (août 2026) : GitHub public `thibautmodrin/*` et Drive Jedha. **Aucun dépôt officiel Getaround étudiant n’a été trouvé.** Les clés API Kayak présentes dans un `.env` Drive ne sont **pas** reproduites ici : à **révoquer / régénérer**, jamais à committer.
+Sources auditées (août 2026) : GitHub **public** `thibautmodrin/*` et Drive Jedha.
+
+**Dépôt à ouvrir en priorité :** [CDSD_Certification_Projets](https://github.com/thibautmodrin/CDSD_Certification_Projets), branche **`certification`**. Il est **privé** : cet audit ne l’a pas lu (404 pour le token limité à HPP-Prediction-Lean). C’est très probablement le **bundle des cas Jedha 1–5**. Tant qu’il n’est pas relu, ne dis **pas** à l’oral « Getaround / Kayak n’existent pas » — dis « ils sont dans mon dépôt de certification, branche `certification` ».
+
+Les clés API Kayak présentes dans un `.env` Drive ne sont **pas** reproduites ici : à **révoquer / régénérer**, jamais à committer.
 
 ---
 
@@ -12,11 +16,11 @@ Sources auditées (août 2026) : GitHub public `thibautmodrin/*` et Drive Jedha.
 |----------|---------|
 | Le **DemoDay / oral Bloc 6** se joue-t-il sur les mini-projets ? | **Non.** Tu présentes **HPP Lean**. Les autres projets sont des **filets** si le jury sort du sujet. |
 | Les repos GitHub suffisent-ils à **valider le titre CDSD** (6 blocs) ? | **Non.** Le titre se capitalise par les **études de cas Jedha** (blocs 1–5) + le **projet libre** (bloc 6). Le portfolio n’est pas le jury. |
-| Peux-tu **défendre** un parcours fullstack à l’oral ? | **Oui sur 2, 3, 4, 6** (preuves Drive / GitHub). **Fragile sur 1** (Kayak incomplet). **Trou sur 5** (Getaround introuvable) — à compenser **honnêtement** par CathQ + HPP Docker, sans prétendre que Getaround est livré. |
+| Peux-tu **défendre** un parcours fullstack à l’oral ? | **Oui sur 2, 3, 4, 6** (Drive / GitHub public). Kayak Drive = **partiel**. Getaround **absent du Drive et du GitHub public**, mais peut être dans le repo **privé** `CDSD_Certification_Projets` (branche `certification`) — **non audité ici**. |
 
 Phrase à dire si on te demande « tu as tout validé ? » :
 
-> « Le projet de soutenance est HPP (Bloc 6). Les blocs 1 à 5 sont les cas Jedha : Speed Dating, Conversion, AT&T sont dans mon Drive ; Kayak est partiel (météo + carte, scraping Booking et warehouse SQL non aboutis) ; Getaround n’est pas dans mon Drive. L’industrialisation que je peux **montrer** aujourd’hui, c’est Streamlit/Docker sur HPP et FastAPI/CI/drift sur CathQ. »
+> « Le projet de soutenance est HPP (Bloc 6). Les cas Jedha des blocs 1 à 5 sont dans le dépôt `CDSD_Certification_Projets`, branche `certification`. En public / Drive : Speed Dating, Conversion, AT&T sont travaillés ; Kayak GPS+météo+carte est là, Booking/RDS moins aboutis. L’industrialisation que je peux **montrer** en live, c’est Streamlit/Docker sur HPP et FastAPI/CI sur CathQ. »
 
 ---
 
@@ -43,7 +47,7 @@ La fiche CDSD 35288 est **inactive depuis le 10/02/2026** ; les inscrits avant c
 | **2** EDA | **Speed Dating** | `Project_Tinder.ipynb` (~2,4 Mo, Plotly, questions métier) | **Oui** si tu sors 3 insights |
 | **3** ML structuré | **Conversion** | Colab `test.ipynb` (pipeline sklearn, `converted`) + **HPP** | **Oui** (HPP est même plus fort) |
 | **4** Non structuré / DL | **AT&T spam** | `at$t_perso.ipynb` (~574 ko) + bonus **Vitizen RAG** | **Oui** pour AT&T ; RAG = bonus mince |
-| **5** Industrialiser / API | **Getaround** (dash + API prix, Docker) | **Stub cours seulement** ; relais : HPP Streamlit/Docker + **CathQ** FastAPI/CI | **Trou Getaround** ; relais défendable |
+| **5** Industrialiser / API | **Getaround** (dash + API prix, Docker) | Drive = stub cours ; **à confirmer** dans `CDSD_Certification_Projets` / `certification`. Relais public : HPP Docker + CathQ FastAPI | **Inconnu tant que le repo privé n’est pas lu** |
 | **6** Conduite de projet | Projet libre | **HPP Lean** | **Oui** si tu tiens [`ORAL_BLOC6.md`](ORAL_BLOC6.md) |
 
 Portfolio GitHub (hors cas Jedha) : [HPP-Prediction-Lean](https://github.com/thibautmodrin/HPP-Prediction-Lean), [CathQ](https://github.com/thibautmodrin/CathQ), [ERP-Stock-Prediction](https://github.com/thibautmodrin/ERP-Stock-Prediction), [Vitizen-RAG](https://github.com/thibautmodrin/Vitizen-RAG).
@@ -55,7 +59,7 @@ Portfolio GitHub (hors cas Jedha) : [HPP-Prediction-Lean](https://github.com/thi
 1. **10 min** = uniquement HPP (problème, anti-leakage, métriques, 57 % ≠ 65 %, 1 HPP / 70 alertes, Docker, limites).
 2. **Q/R** : si « et les autres blocs ? » → tableau ci-dessus, 4 phrases, **pas** de démo Kayak.
 3. **Ne pas** enchaîner CathQ / ERP / Vitizen sauf question explicite.
-4. **Ne jamais** sur-vendre : données CathQ synthétiques, ERP sans sklearn, Vitizen 399 mots, Kayak Booking cassé, Getaround absent.
+4. **Ne jamais** sur-vendre : données CathQ synthétiques, ERP sans sklearn, Vitizen 399 mots, Kayak Booking Drive cassé. Ne **nie** pas Getaround tant que le repo privé n’est pas relu.
 
 ---
 
@@ -105,15 +109,17 @@ Portfolio GitHub (hors cas Jedha) : [HPP-Prediction-Lean](https://github.com/thi
 
 **Bonus.** Vitizen RAG (ci-dessous) montre du **non-structuré génératif**, ce n’est pas le livrable AT&T.
 
-### 5.5 Getaround (Bloc 5) — **trou**
+### 5.5 Getaround (Bloc 5) — **à confirmer dans le repo privé**
 
-**Constat.** Sur Drive : uniquement le stub cours `01-Getaround_analysis (1).ipynb` (~9 ko). Pas d’API pricing, pas de dashboard délai entre locations, pas de Docker Getaround.
+**Constat public.** Drive : uniquement le stub cours `01-Getaround_analysis (1).ipynb` (~9 ko). Pas d’API / Docker Getaround dans les repos **publics**.
+
+**Hypothèse.** Le livrable réel est dans [CDSD_Certification_Projets](https://github.com/thibautmodrin/CDSD_Certification_Projets) / branche `certification` (privé, non lu ici).
 
 **Ce que Jedha attend en général.** Analyse du delay entre locations **et** API documentée de prédiction de prix, packagée (Docker / cloud).
 
-**Quoi dire.** *« Je n’ai pas abouti Getaround. L’industrialisation que je montre : HPP (Streamlit + Compose) et CathQ (FastAPI, MLflow, PSI, CI pytest). »* Ne pas inventer un déploiement Render/Heroku.
+**Quoi dire tant que ce n’est pas relu.** *« Getaround est dans mon dépôt de certification. En live je peux montrer l’industrialisation HPP (Streamlit + Compose) et CathQ (FastAPI, CI). »* Ne pas inventer un déploiement Render/Heroku. Ne pas dire « je n’ai pas fait Getaround » si le zip/repo le contient.
 
-Si Jedha a **déjà validé** le bloc 5 sur Julie pendant le bootcamp, ce trou Drive n’empêche pas l’oral Bloc 6. Si le bloc 5 n’a **jamais** été rendu, c’est un **risque titre**, pas un risque DemoDay 10 min — à clarifier avec l’équipe pédagogique **avant** le jury, pas pendant.
+Si Jedha a **déjà validé** le bloc 5 sur Julie, l’oral Bloc 6 n’en dépend pas. Sinon, ouvre le repo `certification` **avant** le jury.
 
 ---
 
@@ -153,7 +159,7 @@ Voir [`FICHE_ORALE.md`](FICHE_ORALE.md). Une ligne : *curseur de charge, pas un 
 ## 7. Questions « parcours » (réponses toutes faites)
 
 **« Montre-moi que tu es fullstack, pas seulement un notebook HPP. »**  
-Collecte (Kayak APIs), EDA (Speed Dating), ML tabulaire (Conversion + HPP), NLP (AT&T), serving (HPP Docker + CathQ FastAPI), RAG (Vitizen). Getaround non livré.
+Collecte (Kayak APIs), EDA (Speed Dating), ML tabulaire (Conversion + HPP), NLP (AT&T), serving (HPP Docker + CathQ FastAPI), RAG (Vitizen). Getaround : dépôt de certification, pas le live public.
 
 **« Pourquoi tant de projets lean / synthétiques ? »**  
 Même doctrine Jedha : livrer un **cadrage + un POC reproductible** plutôt qu’un zoo. HPP réel PMSI ; CathQ synthétique assumé ; Vitizen corpus pédagogique.
@@ -179,8 +185,8 @@ CathQ est cadré Lead Bloc 4. Spotify / Stripe / Fraud = autres blocs Lead, pas 
 
 ### **Ne bloque pas** l’oral, mais **peut bloquer le titre** si non déjà validé sur Julie
 
-- **Getaround absent** (bloc 5 officiel).
-- **Kayak** sans S3/RDS/Booking abouti (bloc 1).
+- **Getaround** non visible en public (bloc 5) — **vérifier** `CDSD_Certification_Projets` / `certification`.
+- **Kayak** Drive sans S3/RDS/Booking abouti (bloc 1) — même vérif.
 
 Je n’ai pas accès à Julie / aux PV de jury : **demande à Jedha** si les blocs 1–5 sont déjà capitalisés. Si oui, l’oral = Bloc 6. Si non, les mini-projets GitHub **ne ferment pas** ces trous à eux seuls.
 
@@ -200,7 +206,7 @@ La veille, **à voix haute**, chrono 3 min :
 2. Speed Dating : dit vs fait sur l’attractivité ; unité = date.  
 3. Conversion : `total_pages_visited` = leakage.  
 4. AT&T : recall spam ; vectorizer fit sur train.  
-5. Getaround : pas livré ; relais CathQ/HPP.  
+5. Getaround : dépôt `certification` ; relais live CathQ/HPP.  
 6. CathQ : synthétique, τ 0,05, recall 30 %, pas un DM.  
 7. ERP : pas sklearn, z=1,65, LT=7.  
 8. Vitizen : 399 mots, sources, pas RAGAS.
