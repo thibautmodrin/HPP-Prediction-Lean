@@ -101,6 +101,8 @@ Interprétation orale : on bat clairement la baseline ; la RF n’apporte pas de
 4. POC industrialisé (joblib + Streamlit + Docker).  
 5. Limites : précision faible, validation clinique prospective, monitoring du volume d’alertes.
 
+Préparation soutenance (script 10 min, chiffres, Q/R jury) : [`docs/ORAL_BLOC6.md`](docs/ORAL_BLOC6.md) · fiche 1 page : [`docs/FICHE_ORALE.md`](docs/FICHE_ORALE.md).
+
 ## Confidentialité
 
 Données PMSI anonymisées, usage pédagogique. Pas d’identifiants personnels dans le repo portfolio.
