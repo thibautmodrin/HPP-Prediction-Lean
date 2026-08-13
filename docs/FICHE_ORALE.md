@@ -18,4 +18,4 @@
 
 **Clôture.** Livrable = **curseur de charge de travail** cadré avec le métier, RGPD, POC déployable.
 
-**Si question « certification / 6 blocs ».** Ce repo = **Bloc 6**. Spark, DL, API, non-supervisé = blocs 1–5 du bootcamp, pas ce POC.
+**Si question « certification / 6 blocs ».** Ce repo = **Bloc 6**. Spark, DL, API, non-supervisé = blocs 1–5 du bootcamp, pas ce POC. Filet parcours (Kayak, Dating, Conversion, AT&T, Getaround, CathQ, ERP, Vitizen) : [`FICHE_ORALE_PARCOURS.md`](FICHE_ORALE_PARCOURS.md) · détail [`ORAL_MINI_PROJETS.md`](ORAL_MINI_PROJETS.md).

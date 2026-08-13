@@ -102,6 +102,7 @@ Interprétation orale : on bat clairement la baseline ; la RF n’apporte pas de
 5. Limites : précision faible, validation clinique prospective, monitoring du volume d’alertes.
 
 Préparation soutenance (script 10 min, chiffres, Q/R jury) : [`docs/ORAL_BLOC6.md`](docs/ORAL_BLOC6.md) · fiche 1 page : [`docs/FICHE_ORALE.md`](docs/FICHE_ORALE.md).  
+Parcours / mini-projets (Kayak, Dating, Conversion, AT&T, Getaround, CathQ, ERP, Vitizen) : [`docs/ORAL_MINI_PROJETS.md`](docs/ORAL_MINI_PROJETS.md) · [`docs/FICHE_ORALE_PARCOURS.md`](docs/FICHE_ORALE_PARCOURS.md).  
 EDA archivée vs Lean : [`docs/COMPARAISON_EDA.md`](docs/COMPARAISON_EDA.md).
 
 ## Confidentialité

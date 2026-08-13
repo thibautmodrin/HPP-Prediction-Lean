@@ -39,6 +39,8 @@ Ce projet **ne couvre pas** à lui seul :
 
 Si on te le reproche : *« Ces compétences ont été évaluées dans les cas pratiques des blocs 1 à 5. Ici je montre que je sais **cadrer, simplifier et livrer** un POC métier. »*
 
+Audit Drive + GitHub des autres projets (complets ou non, pitchs, pièges) : [`ORAL_MINI_PROJETS.md`](ORAL_MINI_PROJETS.md). Fiche 1 page hors HPP : [`FICHE_ORALE_PARCOURS.md`](FICHE_ORALE_PARCOURS.md). **Getaround est absent** ; Kayak est **partiel** — ne pas les inventer à l’oral.
+
 ### Piège de la version « Lean »
 
 La version complète (XGBoost, MLflow, etc.) existe en archive. Le Lean n’est pas un recul : c’est le message Jedha (Conversion / module 05) : **un modèle simple bien seuillé > un boosting mal cadré**. Assume-le dès la première minute, sinon le jury croira que tu as « enlevé des trucs par manque de temps ».
