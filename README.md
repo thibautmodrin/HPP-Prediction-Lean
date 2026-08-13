@@ -72,7 +72,7 @@ streamlit run app/app.py
 
 ### Docker (démo sans réentraîner)
 
-Les artefacts de démo sont déjà dans `app/artifacts/`.
+Prérequis : `app/artifacts/model_logreg.joblib` (généré par `python -m src.train`, voir [`DATA_LOCATION.md`](DATA_LOCATION.md)). Tant que ce fichier n’est pas dans Git, Compose affiche « artefacts introuvables ».
 
 ```bash
 cd HPP_Prediction_Lean/app

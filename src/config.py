@@ -4,10 +4,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# Source brute (hors repo portfolio, RGPD / poids)
-DEFAULT_RAW_CSV = Path(
-    "/home/burgovida21/Bureau/Jedha_Full_Stack_HPP_Prediction/00_Data/Bourgogne20132023.csv"
-)
+# Source brute (hors Git : RGPD / poids). Voir DATA_LOCATION.md.
+DEFAULT_RAW_CSV = ROOT / "data" / "raw" / "Bourgogne20132023.csv"
 
 RAW_DIR = ROOT / "data" / "raw"
 PROCESSED_DIR = ROOT / "data" / "processed"
